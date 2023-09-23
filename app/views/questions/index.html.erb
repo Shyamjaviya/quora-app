@@ -1,0 +1,9 @@
+<h1> Question Listings </h1>
+
+<% @questions.each do |q| %>
+  <%= link_to "#{q.question}", question_path(q)%><br/>
+<% end %>
+
+<% if user_signed_in? %>
+	<%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete} %>
+<% end %>
