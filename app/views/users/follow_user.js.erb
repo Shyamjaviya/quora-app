@@ -1,7 +1,0 @@
-<% byebug %>
-
-<% if current_user.following?(@user_to_follow) %>
-  alert("You are already following <%= @user_to_follow.username %>");
-<% else %>
-  alert("You are now following <%= @user_to_follow.username %>");
-<% end %>

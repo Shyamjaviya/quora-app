@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   }
   
   resources :questions
-  resources :users do
-    post 'follow_user', on: :member
+  resources :topics do 
+    get 'followed_topic', to: "topics#followed_topic"
+  end
+
+  resources :friendships , only: [:index, :destroy] do 
+    get 'followed_user', to: "friendships#followed_user" 
   end
 end

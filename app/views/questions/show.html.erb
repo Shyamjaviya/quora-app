@@ -8,8 +8,8 @@
 <% end %>
 
 <% if user_signed_in? %>
-  <%= link_to "Follow User", follow_user_user_path(@question.user), method: :post %>
-  <!-- <!%= link_to "Follow Topic", follow_topic_topic_path(@question.topic), method: :post %> -->
+  <%= link_to "Follow User", friendship_followed_user_path(friendship_id: current_user.id) %>
+  <%= link_to "Follow Topic", topic_followed_topic_path(topic_id: current_user.questions.pluck(:topic_id)) %>
 <% end %>
 
 
